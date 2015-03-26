@@ -2,12 +2,11 @@ package android.study.chunsik.androidstudy.study.get_media_thumnail;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.study.chunsik.androidstudy.R;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
-
-import git.test.chunsik.gittestproject.R;
 
 /**
  * Created by admin on 2015-03-24.
