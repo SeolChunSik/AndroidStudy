@@ -1,4 +1,4 @@
-package android.study.chunsik.androidstudy.study;
+package android.study.chunsik.androidstudy.study.thrad_example;
 
 import java.util.LinkedList;
 import java.util.Objects;
