@@ -1,0 +1,7 @@
+step1~step3에서 3가지 방식의 스레드를 구현
+Thread 클래스는 스레드의 전체 실행 흐름을 완전히 제어해야 하는 경우가 아니라면 사용을 권장하지 않음
+AsycTask와 Handler는 대부분의 사례에서 권장
+주기적으로 자주 사용하는건 handler
+그 외 AsyncTask 권장
+handler는 장기적으로 코드를 줄여주는 장점
+AsyncTask는 사용하기 쉽다는 장점
