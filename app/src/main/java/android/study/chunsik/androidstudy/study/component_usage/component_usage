@@ -1,0 +1,20 @@
+Activity
+- ui와 관련한 작업만을 처리 (사용자 인터페이스만 집중하는 게 좋다)
+- 처리 시간이 오래 걸리는 작업은 별도 service에서 구현
+
+Service
+- 일반적인 사용자 인터페이스 작업과 관련 없는 작업은 service에서 수행
+- 각 작업에는 별도 service를 둘 것을 권장
+- 웹서비스, 음악 플레이어 같은 작업
+
+BroadcastReceiver
+- 시스템 이벤트 리스닝
+- 등록 했을 경우 꼭 해제해야 함
+
+ContentProvider
+- 저장기법
+
+Application
+- 최상위 레벨 컴포넌트
+- 항상 하나의 application만을 갖음
+- 참조는 Context.getapplication() 메서드를 통해 언제든 가져올 수 있다.
