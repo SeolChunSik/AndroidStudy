@@ -1,0 +1,56 @@
+manifest속성
+ - sharedUserID = 실행될 리눅스 사용자 iD
+ - sharedUserLabel = 실행될 리눅스 사용자 이름
+ - 위 2가지 속성을 이용하여 어플리케이션들의 프로세스를 서로 공유할 수 있다. (무료버전, 유료버전 사용시 참고)
+
+ - installLocation = 어플리케이션이 설치될 위치를 결정한다
+
+ - 화면 크기 지원 예제
+ <supports-screens android:smallScreens="false"
+                   android:normalScreens="false"
+                   android:largeScreens="false"
+                   android:xlargeScreens="false" />
+
+ <application
+         android:description="~~"
+         android:backupAgent="~~"
+         android:largeHeap="~~" ->vm의 힙 크기 제한 문제를 격을 때 더 많은 메모리가 필요함을 알려줌으로써 해결 (꼭 필요한 경우가 아니면 사용x)
+         android:process="~~"->다른 앱과 공유하기 위해서 (대부분 x)
+
+
+ - 각 컴포넌트 속성
+   android:enalble ="false"를 지정하면 intent를 수신하지 못하게 함
+        -이 설정은 코드에서 변경할 수있음
+        sample - 1
+        <activity
+                android:name=".setupActivity"
+                ~~~
+                android:enable="true">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN"/>
+                    <category android:name="android.intent.category.LAUNCHER"/>
+                </intent-filter>
+        </activity>
+        <activity
+                android:name=".MainActivity"
+                ~~~
+                android:enable="false">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN"/>
+                    <category android:name="android.intent.category.LAUNCHER"/>
+                </intent-filter>
+        </activity>
+
+        다음 코드는 PackageManager API를 사용해 Activity의 활성 상태를 토글하는 간단한 예제
+        private void toggleActivityies(){
+            PackageManager p = getPackageManager();
+            //메인 activity를 활성화
+            p.setComponentEnabledSetting(new ComponentName(this, MainActivity.class), PackageManager.COMPONENET_ENABLE_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+            //설정 activity를 활성화
+            p.setComponentEnabledSetting(new ComponentName(this, SetupActivity.class), PackageManager.COMPONENET_ENABLE_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+        }
+
+   android:exported = ""
+   다른 애플리케이션의 컴포넌트에서 이 액티비티를 런치 할 수 있는지를 설정한다.
+   false”라면 이 액티비티는 같은 애플리케이션 혹은 같은 유저 ID를 가진 애플리케이션 컴포넌트만 런치 할 수 있다.
+   디폴트는 액티비티가 인텐트 필터를 포함하는지에 달려있다. 필터가 없다면 디폴트 값이 “false”이고 필터가 있다면 “true”이다.

@@ -44,7 +44,7 @@ public class EnumStudy {
      * 이전엔 enum도입을 권장하지 않음 (메모리 및 성능 부담이 정수 상수를 사용할 때보다 큼)
      * 하지만 요즘은 jit컴파일러가 강력해졌고, 달빅 vm도 계쏙해서 개선되고 있으므로 크게 걱정하지
      * 않아도 됨 요즘은 권장함
-     *
+     * <p/>
      * 적절하게 사용할 필요가 있음
      */
     private static class MachineAfter {
@@ -55,7 +55,7 @@ public class EnumStudy {
 
         private State mState;
 
-        public MachineAfter(){
+        public MachineAfter() {
             mState = State.STOPPED;
         }
 
