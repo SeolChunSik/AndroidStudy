@@ -1,4 +1,4 @@
-package android.study.chunsik.androidstudy.study.objectStudy.step2;
+package android.study.chunsik.androidstudy.study.objectStudy.Part1.step2;
 
 import java.util.Iterator;
 import java.util.LinkedList;

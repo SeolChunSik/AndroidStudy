@@ -1,4 +1,4 @@
-package android.study.chunsik.androidstudy.study.objectStudy.step1;
+package android.study.chunsik.androidstudy.study.objectStudy.Part1.step2;
 
 /**
  * Created by admin on 2015-04-20.
@@ -7,13 +7,13 @@ public class Guitar {
 
     String serialNumber;
     double price;
-    String builder;
+    Builder builder;
     String model;
-    String type;
-    String backWood;
-    String topWood;
+    Type type;
+    Wood backWood;
+    Wood topWood;
 
-    public Guitar(String serialNumber, double price, String builder, String model, String type, String backWood, String topWood) {
+    public Guitar(String serialNumber, double price, Builder builder, String model, Type type, Wood backWood, Wood topWood) {
         this.serialNumber = serialNumber;
         this.price = price;
         this.builder = builder;
@@ -31,7 +31,7 @@ public class Guitar {
         return price;
     }
 
-    public String getBuilder() {
+    public Builder getBuilder() {
         return builder;
     }
 
@@ -39,15 +39,15 @@ public class Guitar {
         return model;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public String getBackWood() {
+    public Wood getBackWood() {
         return backWood;
     }
 
-    public String getTopWood() {
+    public Wood getTopWood() {
         return topWood;
     }
 }
